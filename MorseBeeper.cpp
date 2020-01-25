@@ -1,4 +1,4 @@
-﻿#include <wx/wxprec.h>
+#include <wx/wxprec.h>
 #ifndef WX_PRECOMP
 #include <wx/wx.h>
 #endif
@@ -92,19 +92,7 @@ void* BeepThread::Entry()
 		wxThreadEvent* event = new wxThreadEvent(wxEVT_THREAD, IDE_THREAD_UPDATE);
 		event->SetInt(((i + 1) * 100 / m_length));
 		wxQueueEvent(m_pHandler->GetEventHandler(), event);
-		if (str[i] == '\\') {
-			Beep(1500, 600);
-			Sleep(200);
-			Beep(1500, 200);
-			Sleep(200);
-			Beep(1500, 200);
-			Sleep(200);
-			Beep(1500, 600);
-			Sleep(200);
-			Beep(1500, 200);
-		}
-		else
-			BeepChar(str[i]);
+		BeepChar(str[i]);
 		Sleep(600);
 	}
 	wxQueueEvent(m_pHandler->GetEventHandler(), new wxThreadEvent(wxEVT_THREAD, IDE_THREAD_COMPLETE));
