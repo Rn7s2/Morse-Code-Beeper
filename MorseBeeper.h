@@ -352,6 +352,17 @@ void BeepChar(char x)
 		Sleep(200);
 		Beep(1500, 200);
 		break;
+	case '\\':
+		Beep(1500, 600);
+		Sleep(200);
+		Beep(1500, 200);
+		Sleep(200);
+		Beep(1500, 200);
+		Sleep(200);
+		Beep(1500, 600);
+		Sleep(200);
+		Beep(1500, 200);
+		break;
 	case ':':
 		Beep(1500, 600);
 		Sleep(200);
